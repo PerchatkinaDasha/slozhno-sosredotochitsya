@@ -1,5 +1,377 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-color: var(--bg-color);
+  display: grid;
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  background-attachment: fixed;
+  min-block-size: 100vh;
+  inline-size: 100%;
+  font-family: var(--font-family);
+  line-height: 1.462rem;
+  color: var(--text-color);
+}
+
+.header {
+  display: grid;
+  min-height: max(100vh, 668px);
+  grid-template-rows: 1fr min-content 1fr;
+  padding: 20px;
+  align-items: center;
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before {
+  position: absolute;
+  content: "";
+  background-color: transparent;
+  block-size: 25px;
+  inline-size: 25px;
+  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+  inset-block-end: 20px;
+  inset-inline-start: 20px;
+}
+
+.decorated-zone::after {
+  position: absolute;
+  content: "";
+  background-color: transparent;
+  block-size: 25px;
+  inline-size: 25px;
+  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+  inset-block-start: 20px;
+  inset-inline-end: 20px;
+}
+
+.decor__rec {
+  position: absolute;
+  text-transform: uppercase;
+  color:  #ff0070;
+  line-height: 25px;
+  inset-block-start: 20px;
+  inset-inline-end: 20px;
+}
+
+.decor__rec::after {
+  display: inline-block;
+  content: '';
+  block-size: 9px;
+  inline-size: 9px;
+  background-color:#ff0070;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 2px  #ff0070;
+  margin: 2px 10px;
+}
+
+.header__theme_menu {
+  justify-self: center;
+  align-self: start;
+}
+
+.header__theme_menu_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.header__theme_menu_button {
+  color: var(--accent-color);
+  line-height: 1.125rem;
+  text-transform: lowercase;
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  padding: 1.5px 15px 5px 15px;
+}
+
+.header__theme_menu_button_active {
+  border: 1px solid var(--accent-color);
+  pointer-events: none;
+}
+
+.header__theme_menu_button:focus {
+  outline: none;
+}
+ 
+.header__theme_menu_button:focus-visible {
+  border-bottom:  1px solid var(--accent-color) ;
+  outline: none;
+}
+
+.header__theme_menu_button:hover {
+  outline:  1px solid var(--accent-color-hover) ;
+}
+
+.title {
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  font-weight: 700;
+  line-height: 129.53px;
+  color: var(--main-title-color);
+  text-shadow: 4px 4px 0 var(--title-shadow);
+  margin-left: -20px;
+}
+
+.header__text {
+  font-weight: 700;
+  color: var(--subtitle-color);
+  max-inline-size: 50%;
+  justify-self: end;
+  letter-spacing: -0.4px;
+}
+
+.title__decor {
+  background-color: var(--bg-color-text);
+}
+
+.section__title{
+  color: var(--title-color);
+  font-weight: normal;
+  font-size: 18px;
+  font-weight: bold;
+  width: 315px;
+  letter-spacing: -0.4px;
+}
+
+.section__content {
+  display: grid;
+  gap: 20px;
+}
+
+
+.content {
+  display: grid;
+  gap: 80px;
+  max-width: 1440px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 12px;
+}
+
+.section__list {
+  display: grid;
+  gap: 20px;
+}
+
+.horizontal__section {
+  display: grid;
+  grid-template-rows: auto;
+  gap: 20px;
+}
+
+.horizontal__list .item {
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.item__title {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--subtitle-color);
+  letter-spacing: -0.4px;
+}
+
+.item__text {
+  font-size: 18px;
+  line-height: 23.4px;
+  color: var(--text-color);
+  letter-spacing: -0.4px;
+}
+
+.text__title {
+  color: var(--subtitle-color);
+  letter-spacing: -0.5px;
+  font-weight: normal;
+}
+
+.link {
+  color: currentColor;
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--link-color);
+  font-size: 18px;
+}
+
+.link:hover {
+  border-block-end: 1px solid var(--link-hover);
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  outline: 1px solid var(--accent-color);
+}
+
+.horizontal__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.pictures {
+  display: grid;
+  gap: 20px;
+}
+
+.pictures__title {
+  background-color: var(--bg-color-text);
+  color: var(--subtitle-color);
+  font-size: 18px;
+  letter-spacing: -0.4px;
+}
+
+.pictures__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image:nth-child(1){
+  grid-column: span 2;
+}
+
+.image:nth-child(2) {
+  grid-row: span 2;
+}
+
+.image:nth-child(3) {
+  grid-row: span 2;
+}
+
+.image:nth-child(5) {
+  grid-column: span 2;
+}
+
+.footer {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  block-size: 100vh;
+}
+
+.footer__title {
+  margin-top: 0;
+  margin-left: 0;
+}
+
+@media (max-width:768px) {
+  .header__theme_menu_list {
+    grid-template-columns: none;
+    grid-template-rows: repeat(3, 26px);
+  }
+
+  .header__theme_menu {
+    justify-self: end;
+    align-self: center;
+  }
+
+  .header__text {
+    margin-bottom: 12px;
+  }
+
+  .title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+
+  .section {
+    grid-template-columns: 236px 2fr;
+    gap: 20px;
+  }
+  
+  .section__title {
+    max-width: 236px;
+  }
+
+  .section__list {
+    max-width: 472px ;
+  }
+
+  .horizontal__list {
+    grid-template-columns: auto;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .content {
+    gap: 50px;
+    margin: 40px auto;
+    padding: 0 10px;
+  }
+  
+  .section {
+    grid-template-columns: 1fr;
+  }
+  
+  .pictures__list {
+   display: flex;
+   flex-direction: column;
+   gap: 10px; 
+  }
+
+  .pictures {
+    gap: 10px;
+    max-height: none;
+  }
+
+  .header__text {
+    max-inline-size: 100%;
+    margin-bottom: 0px;
+  }
+
+  .header {
+    padding: 10px;
+  }
+
+  .title {
+    margin-left: 0px;
+    line-height: 95.7px;
+  }
+
+  .section__title {
+    max-width: 375px;
+  }
+
+  .decorated-zone::before {
+    inset-block-end: 10px;
+    inset-inline-start: 10px;
+  }
+  
+  .decorated-zone::after {
+    inset-block-start: 10px;
+    inset-inline-end: 10px;
+  }
+
+  .decor__rec {
+    inset-block-start: 10px;
+    inset-inline-end: 10px;
+  }
+
+  .image {
+    height: inherit;
+  }
 }
