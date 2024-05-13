@@ -310,10 +310,6 @@
   .section__list {
     max-width: 472px ;
   }
-
-  .horizontal__list {
-    grid-template-columns: auto;
-  }
 }
 
 @media (max-width: 767px) {
@@ -374,5 +370,11 @@
 
   .image {
     height: inherit;
+  }
+}
+
+@media (max-width: 800px) {
+  .horizontal__list {
+    grid-template-columns: auto;
   }
 }
