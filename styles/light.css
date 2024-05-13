@@ -8,7 +8,7 @@
   --text-color: #353430;
   --link-color: #FF8DCB;
   --link-hover:#353430;
-  --bg-image: url(/images/cover-image-light.png);
+  --bg-image: url(../images/cover-image-light.png);
   --accent-color-hover: rgba(50, 49, 45, 0.4);
 }
 
@@ -23,7 +23,7 @@
     --text-color: #353430;
     --link-color: #FF8DCB;
     --link-hover:#353430;
-    --bg-image: url(/images/cover-image-light.png);
+    --bg-image: url(../images/cover-image-light.png);
     --accent-color-hover: rgba(50, 49, 45, 0.4);
   }
   

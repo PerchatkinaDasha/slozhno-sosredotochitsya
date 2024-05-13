@@ -5,6 +5,7 @@
   background-image: var(--bg-image);
   background-repeat: no-repeat;
   background-position: bottom;
+  font-size: 18px;
   background-size: cover;
   background-attachment: fixed;
   min-block-size: 100vh;
