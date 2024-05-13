@@ -79,7 +79,11 @@
 .header__theme_menu_list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 4px;
+}
+
+.header__theme_menu_item {
+  line-height: 18px;
 }
 
 .header__theme_menu_button {
@@ -283,6 +287,8 @@
   .header__theme_menu_list {
     grid-template-columns: none;
     grid-template-rows: repeat(3, 26px);
+    padding-top: 14px;
+    gap: 10px;
   }
 
   .header__theme_menu {
@@ -313,6 +319,12 @@
 }
 
 @media (max-width: 767px) {
+  .header__theme_menu_list {
+    grid-template-columns: none;
+    grid-template-rows: repeat(3, 26px);
+    padding-top: 0px;
+    gap: 10px;
+  }
 
   .content {
     gap: 50px;
